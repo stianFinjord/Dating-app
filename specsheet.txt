@@ -1,0 +1,31 @@
+
+
+Kundemøte 18.09.2024
+
+- Vil ha flere sketcher før jeg starter. Sketch på alle bildene. 
+- Viktigste er at bildene henger sammen, final design er ikke så viktig. 
+
+- Mangler meldinger, 
+- Hva skjer hvis jeg sender hjerte?
+- Tilbakeknapp?
+- Min profil?
+- Login?
+- Oversikt over meldinger
+- Lage tilbakeknapp
+- Hvordan laster jeg opp bilder?
+- Admin-tilgang (nice to have)
+
+Jevnlig oppdatering, oppsummering på slutten av møte. 
+Send mail til kunde hvis man har spørsmål om noe. 
+
+Bilder:
+- Oversikt profiler (done)
+- Se en profil (done)
+- Innlogg (done)
+- Oversikt meldinger (done)
+- Chat (done)
+- Se egen profil (laste opp bilde her)(done)
+
+Her er mockup
+
+https://docs.google.com/presentation/d/1ZLM53_oY4RHBsxFADSjBsCsufG-YPYh19wct1Xfhpo8/edit#slide=id.g301f993c8ac_0_47
