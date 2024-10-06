@@ -1,0 +1,99 @@
+* { /* Resets global padding and margin */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes padding/borders stay within defined dimensions */
+}
+
+.view{
+    display:flex;
+    flex-direction:column;
+    height: 100vh;
+}
+
+.container {
+    display:flex;
+    
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif;
+}
+
+.back-button {
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left: 15px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+/* chatView */
+.messageContainer {
+    flex-grow: 1;
+    flex: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+}
+
+.messageContainer div {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+    max-width: 75vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.messageRight {
+    align-self: flex-end;
+    background-color: rgb(82, 200, 255);
+}
+
+.messageLeft {
+    align-self: flex-start;
+    background-color: rgb(252, 157, 94);
+}
+
+.send-message {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.send-message input {
+    padding: 5px;
+    flex-grow: 1;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.chat-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.send-message button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0px;
+    background-color: rgb(91, 201, 252);
+}
+

@@ -29,3 +29,13 @@ Bilder:
 Her er mockup
 
 https://docs.google.com/presentation/d/1ZLM53_oY4RHBsxFADSjBsCsufG-YPYh19wct1Xfhpo8/edit#slide=id.g301f993c8ac_0_47
+
+Kan ha en fil per view, og en controller per view. 
+
+find() returnerer ett objekt, filter() returnerer en array. 
+
+Navngivning: Hva er ansvarsområdet til akkurat til denne funksjonen?
+
+Kan ha common.js for controller-funksjoner som ikke tilhører spesifikt view. 
+
+

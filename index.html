@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 
@@ -29,13 +30,34 @@
     
     
     TODO: Stoppet opp på å ha ID på brukerprofiler. 
-    
-    
-    -->
-    <div id="app"></div>    
-    <!-- <script src="Profile.js"></script> -->
-    <script src="controller.js"></script>
+    -->       
+
+    <div id="app"></div>
     <script src="model.js"></script>
-    <script src="view.js"></script>
+
+    <!-- Chat directory files -->
+    <script src="views/chat/chatController.js"></script>
+    <script src="views/chat/chatOverviewView.js"></script>
+    <script src="views/chat/chatView.js"></script>
+
+    <!-- Login directory files -->
+    <script src="views/login/loginController.js"></script>
+    <script src="views/login/loginView.js"></script>
+
+    <!-- Profiles directory files -->
+    <script src="views/profile/profileController.js"></script>
+    <script src="views/profile/profileOverviewView.js"></script>
+    <script src="views/profile/profileView.js"></script>
+
+    <!-- My profile directory files -->
+    <script src="views/myProfile/myProfileView.js"></script>
+    <script src="views/myProfile/myProfileController.js"></script>
+
+
+    
+    <!-- Main controller and common functions -->
+    <script src="controllers/common.js"></script>
+    <script src="controllers/mainController.js"></script>
+
 </body>
 </html>
