@@ -1,4 +1,7 @@
-function setViewChat() {
+function setViewChat(profileId = null) {
+    if(profileId) {
+        model.app.shownProfileId = profileId;
+    }
     model.app.currentPage = 'chat';
     showView();
 }
@@ -19,21 +22,21 @@ function addMessageToModel(message) {
     model.messages.push(
         {
             sentById: model.app.loggedInUser,
-            sentToId: model.app.shownProfile,
+            sentToId: model.app.shownProfileId,
             content: message,
             timeStamp: new Date().toISOString(),
         },
     );
 }
 
-function getAllMessagesBetweenUsers(profile) { // TODO: Sjekke om jeg kan bruke filter()
-    let firstPerson = model.app.loggedInUser;
-    let secondPerson = profile.id;
+function getAllMessagesBetweenUsers(profileId) { // TODO: Sjekke om jeg kan bruke filter()
+    let firstPersonId = model.app.loggedInUser;
+    let secondPersonId = profileId;
     let messageArray = [];
     for (let message of model.messages) { // Checks all messages and see if they match with current users
-        if (message.sentById == firstPerson && message.sentToId == secondPerson) {
+        if (message.sentById == firstPersonId && message.sentToId == secondPersonId) {
             messageArray.push(message);
-        } else if (message.sentById == secondPerson && message.sentToId == firstPerson) {
+        } else if (message.sentById == secondPersonId && message.sentToId == firstPersonId) {
             messageArray.push(message);
         }
     }
@@ -41,10 +44,14 @@ function getAllMessagesBetweenUsers(profile) { // TODO: Sjekke om jeg kan bruke 
         (b.timeStamp.localeCompare(a.timeStamp)));
     return messageArray;
 }
-
-function getMostRecentMessageFromUser(profile) {
-    let allMessages = getAllMessagesBetweenUsers(profile);
-    return allMessages[0];
+// Integer as parameter
+function getMostRecentMessageFromUser(profileId) {
+    let allMessages = getAllMessagesBetweenUsers(profileId);
+    if (allMessages.length > 0) {
+        return allMessages[0];
+    } else {
+        return null;
+    }
 }
 
 // Get a list with all people there are chats with, and their most recent message. Returns a list of both
@@ -52,12 +59,14 @@ function getMostRecentMessageFromUser(profile) {
 function getAllRecentUsersAndMessages() {
     let personAndMessage = [];
     for(let profile of model.profiles) {
-        personAndMessage.push(
-            {
-                profile: profile,
-                message: getMostRecentMessageFromUser(profile),
-            }
-        );
+        if (getMostRecentMessageFromUser(profile.id) != null) {
+            personAndMessage.push(
+                {
+                    profile: profile,
+                    message: getMostRecentMessageFromUser(profile.id),
+                }
+            );
+        }
     }
     return personAndMessage;
 }

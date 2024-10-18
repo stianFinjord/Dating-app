@@ -5,7 +5,7 @@ function renderChatView() {
                 <button class="back-button" onclick="setViewChatOverview()">
                     <img src="svg/back-button.svg" alt="Back">
                 </button>
-                <div class=chat-title>Chat med ${getCurrentProfile().name}</div>
+                <div class=chat-title onclick="setViewProfile()">Chat med ${getCurrentProfile().name}</div>
             </div>
             ${buildChatMessages()}
             <form class="send-message" onsubmit="sendChatMessage(); return false;">
@@ -15,9 +15,9 @@ function renderChatView() {
         </div>
     `
 }
-
-function buildChatMessages() { // displays the chat messages in the chatView
-    let messages = getAllMessagesBetweenUsers(model.app.shownProfile);
+// displays the chat messages in the chatView
+function buildChatMessages() {
+    let messages = getAllMessagesBetweenUsers(model.app.shownProfileId);
     let messageClass = "";
     let html = /*HTML*/ `<div class="messageContainer">
     `

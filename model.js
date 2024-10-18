@@ -2,8 +2,8 @@ const model = {
     // tilstand app
     app: {
         loggedInUser: 0,
-        currentPage: 'chatOverview', //login, profileView, profileOverview, chat, chatOverview, myProfile
-        shownProfile: 1,
+        currentPage: 'login', //login, profileView, profileOverview, chat, chatOverview, myProfile
+        shownProfileId: 7,
     },
     // input-felter fra hver side
     inputs: {
@@ -23,7 +23,21 @@ const model = {
     },
 
     // data
+    photos: [
+        {
+            photoId: 0,
+            userId: 0,
+            photos: '',
+        }
+    ],
     profiles: [
+        {
+            id: 0,
+            name: "Stian",
+            age: 23,
+            bio: "Jeg er mann, du er dame, need i say more?",
+            photoId: 1,
+        },
         {
             id: 1,
             name: "Jørgine",
@@ -647,11 +661,5 @@ const model = {
             timeStamp: "2024-10-07T10:15:30Z"
         }
     ],
-    photos: [
-        {
-            photoId: 0,
-            userId: 0,
-            photos: '',
-        }
-    ],
+    
 };

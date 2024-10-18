@@ -4,9 +4,11 @@ function viewRandomProfile() { // rename til setRandomProfile
     showView();
 }
 
-function setViewProfile(profileId) { 
+function setViewProfile(profileId = null) { //FIXME: Fungerer ikke på profil 0
     model.app.currentPage = 'profileView';
-    model.app.shownProfile = profileId;
+    if (profileId != null) {
+        model.app.shownProfileId = profileId;
+    }
     showView();
 }
 
@@ -17,19 +19,12 @@ function setViewProfileOverview() {
 
 
 function nextProfile() { //FIXME: Oppdatere modellen til neste profil og kalle på showView()
-
-    renderProfileView(currentProfile);
+    model.app.shownProfileId = getRandomProfile().id;
+    model.app.currentPage = "profileView";
+    showView();
 }
 
-function getCurrentProfile() { //FIXME: Se på forslag under og ta høyde for manglende verdi
-    // return model.profiles.find(profile => profile.id == model.app.shownProfile)
- 
-     for (let profile of model.profiles) {
-         if(profile.id == model.app.shownProfile) {
-             return profile;
-         }
-     }
- }
+
 
  function getRandomProfile() {
     return model.profiles[Math.floor(Math.random()*model.profiles.length)];

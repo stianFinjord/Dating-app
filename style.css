@@ -97,3 +97,68 @@
     background-color: rgb(91, 201, 252);
 }
 
+/* Chat Overview */
+.chat-overview {
+    padding: 5px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.chat-preview {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    height: 15vh;
+    cursor: pointer;
+    border-bottom: 1px solid lightgray;
+    
+}
+
+.chat-preview img {
+    flex-shrink: 0;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    overflow: hidden;
+    margin-right: 10px;
+    background-color: #4d585837
+}
+
+.chat-preview-text {
+    max-height: 100%;
+    overflow: hidden;
+}
+
+
+
+/* Profile View */
+
+.profile-view img{
+    max-height: 100vw;
+}
+
+/* Profile Overview */
+
+.profile-card {
+    height: 12em;
+    width: 10em;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.profile-card-text {
+    padding: 5px;
+}
+
+.profile-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.profile-overview {
+    display: flex;
+    flex-wrap: wrap;
+}
