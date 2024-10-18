@@ -2,10 +2,10 @@ function renderLoginView() {
     document.getElementById("app").innerHTML = /*HTML*/ `
         <div>
             <form>
-                Brukernavn:<input type='text'><br>
-                Passord:<input type='password'><br>
+                Brukernavn:<input type='text' value="Stian" onchange=setUsernameToModel(this.value)><br>
+                Passord:<input type='password' value="1234"><br>
             </form>
-            <button onclick="setViewProfileOverview()">Logg inn</button>
+            <button onclick="logIn()">Logg inn</button>
         </div>
     `
 }
